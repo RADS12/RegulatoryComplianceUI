@@ -1,0 +1,62 @@
+.tabs-section-container {
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  margin: 2rem auto;
+  max-width: 90rem;
+  background: #fff;
+}
+
+.tab-body-container {
+  padding: 2rem;
+}
+.tab-nav-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.tab-nav {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 1rem;
+  background: #400fd1;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  width: 100%;
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.tab-nav button {
+  flex: 1;
+  min-width: 20rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.15rem;
+  background: none;
+  border: none;
+  color: #475bb4;
+  cursor: pointer;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 3px solid transparent;
+  outline: none;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.tab-nav button.active {
+  color: #03552f;
+  border-bottom: 3px solid rgb(31, 82, 2);
+  background: none;
+  z-index: 1;
+  position: relative;
+  box-sizing: border-box;
+  /* Ensure underline stays within tab header */
+}
+
+/* In your tabs.html, wrap .tab-nav with .tab-nav-container */
+/* <div class="tab-nav-container"><div class="tab-nav"> ... </div></div> */

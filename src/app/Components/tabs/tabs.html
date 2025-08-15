@@ -1,0 +1,14 @@
+<div class="tabs-section-container">
+  <div class="tab-nav-container">
+    <nav class="tab-nav">
+      @for (tab of tabs; track tab.label; let i = $index) {
+        <button [class.active]="selectedIndex === i" (click)="selectTab(i)" [style.background-color]="tab.status === 'passed' ? '#c8e6c9' : ''">
+          {{ tab.label }}
+        </button>
+      }
+    </nav>
+  </div>
+  <div class="tab-body-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

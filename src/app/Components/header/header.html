@@ -1,3 +1,5 @@
-<header class="app-header">
-  <p>Regulatory Compliance UI!</p>
+<header class="header" [ngClass]="{ 'header-failed': isAnyTabFailed, 'header-passed': !isAnyTabFailed }">
+  <div class="header-title">Regulatory Compliance Test Results</div>
+  <div class="loan-number">Loan Number: 3244555678</div>
+  <div class="test-status-header">Test: Passed</div>
 </header>

@@ -1,3 +1,21 @@
-import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { Routes } from '@angular/router';
+import { Tabs } from './Components/tabs/tabs';
+import { SafeHarbor } from './Components/safeHarbor/safeHarbor';
+import { HighCost } from './Components/highCost/highCost';
+import { PointsFees } from './Components/pointsFees/pointsFees';
+import { StateRegulatoryTests } from './Components/stateRegulatoryTests/stateRegulatoryTests';
+
+export const routes: Routes = [
+	{
+		path: '',
+		component: Tabs,
+		children: [
+			{ path: 'safe-harbor', component: SafeHarbor },
+			{ path: 'high-cost', component: HighCost },
+			{ path: 'points-fees', component: PointsFees },
+			{ path: 'state-regulatory-tests', component: StateRegulatoryTests },
+			{ path: '', redirectTo: 'safe-harbor', pathMatch: 'full' }
+		]
+	}
+];
