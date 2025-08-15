@@ -1,3 +1,10 @@
+h2 {
+  color: #e91e63;
+}
+p {
+  font-size: 1rem;
+}
+
 .test-status.passed {
   background: #81c784;
   color: #fff;
@@ -6,7 +13,17 @@
   border-radius: 8px;
   margin-top: 1rem;
   font-size: 1.2rem;
-  box-shadow: 0 2px 8px rgba(67, 234, 124, 0.15);
+  text-align: center;
+}
+
+.test-status.failed {
+  background: #e53935; /* red */
+  color: #fff;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 h2 {

@@ -3,6 +3,7 @@
     "Type": "FHA",
     "State": "California",
     "Compliance": "Yes",
-    "SpecialRule": "No prepayment penalty"
+    "SpecialRule": "No prepayment penalty",
+    "Result": "Passed"
   }
 }
