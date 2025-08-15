@@ -1,0 +1,23 @@
+Angular Best Practices
+=====================
+
+1. Use Angular CLI for project setup and code generation.
+2. Organize code by feature modules, not just by type (e.g., group related components/services).
+3. Use OnPush change detection for performance in most components.
+4. Prefer const and let over var for variable declarations.
+5. Use interfaces and types for strong typing and clarity.
+6. Avoid logic in templates; keep templates simple and use pipes/services for complex logic.
+7. Use dependency injection for services and shared logic.
+8. Write unit tests for components, services, and pipes.
+9. Use Angular’s built-in lifecycle hooks appropriately (ngOnInit, ngOnDestroy, etc.).
+10. Keep component classes focused; move business logic to services.
+11. Use trackBy in *ngFor for better performance.
+12. Use environment files for configuration.
+13. Avoid using any type; prefer explicit types.
+14. Use lazy loading for feature modules to improve startup time.
+15. Keep CSS scoped to components; use Angular’s ViewEncapsulation if needed.
+16. Document code with comments and JSDoc where necessary.
+17. Use RxJS operators for complex async flows, and unsubscribe from Observables to prevent memory leaks.
+18. Use Angular’s router for navigation and guards for route protection.
+19. Keep HTML and CSS clean, semantic, and accessible.
+20. Regularly update dependencies and Angular version for security and features.

@@ -18,8 +18,12 @@
 } */
 
 .header-passed {
-  background: linear-gradient(90deg, #4caf50 0%, #43ea7c 100%);
+  background: linear-gradient(90deg, #090cce 0%, #0249b3 100%);
 }
+
+/* .header-passed {
+  background: linear-gradient(90deg, #4caf50 0%, #43ea7c 100%);
+} */
 
 .header-failed {
   background: linear-gradient(90deg, #e53935 0%, #ff5252 100%);
