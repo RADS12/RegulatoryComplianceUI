@@ -16,7 +16,7 @@
 	font-family: Arial, sans-serif;
 	border-bottom: 2px solid #ccc;
 } */
- 
+
 .header-passed {
   background: linear-gradient(90deg, #4caf50 0%, #43ea7c 100%);
 }
@@ -78,14 +78,14 @@ header {
   position: relative;
   justify-content: center;
 }
-  header {
-    padding: 2rem;
+
+header {
+  padding: 2rem;
   text-align: center;
   width: 100%;
   justify-content: center;
   display: flex;
 }
-  }
 
   img {
     width: 4.5rem;
@@ -96,4 +96,3 @@ header {
     margin: 0;
     padding: 0;
   }
-}
