@@ -3,6 +3,7 @@
     "Type": "Conventional",
     "Points": "2%",
     "Fees": "$1,200",
-    "Threshold": "Passed"
+    "Threshold": "Passed",
+    "Result": "Passed"
   }
 }

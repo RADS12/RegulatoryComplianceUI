@@ -1,10 +1,13 @@
 <div class="test-status passed">Test Passed</div>
-<div class="mortgage-info">
-  <h2>High Cost Test Results:</h2>
-  <ul>
-    <li>Type: Section 32</li>
-    <li>Interest Rate: Adjustable</li>
-    <li>Term: 15 Years</li>
-    <li>APR: Above threshold</li>
-  </ul>
-</div>
+@if (highCostData) {
+  <div class="mortgage-info">
+    <h2>High Cost Test Results:</h2>
+    <ul>
+      <li>Type: {{ highCostData.Type }}</li>
+      <li>Interest Rate: {{ highCostData.InterestRate }}</li>
+      <li>Term: {{ highCostData.Term }}</li>
+      <li>APR: {{ highCostData.APR }}</li>
+      <li>Result: {{ highCostData.Result }}</li>
+    </ul>
+  </div>
+}

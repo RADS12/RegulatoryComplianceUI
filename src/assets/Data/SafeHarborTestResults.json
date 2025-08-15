@@ -3,6 +3,8 @@
     "Type": "Qualified Mortgage",
     "InterestRate": "Fixed",
     "Term": "30 Years",
-    "PointsAndFees": "Below threshold"
+    "PointsAndFees": "Below threshold",
+    "TestATR": "Passed",
+    "TestQM": "Passed"
   }
 }

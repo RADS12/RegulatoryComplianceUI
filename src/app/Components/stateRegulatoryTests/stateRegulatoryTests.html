@@ -1,10 +1,13 @@
 <div class="test-status passed">Test Passed</div>
-<div class="mortgage-info">
-  <h2>State Regulatory Test Results:</h2>
-  <ul>
-    <li>Type: FHA</li>
-    <li>State: California</li>
-    <li>Compliance: Yes</li>
-    <li>Special Rule: No prepayment penalty</li>
-  </ul>
-</div>
+@if (stateRegulatoryData) {
+  <div class="mortgage-info">
+    <h2>State Regulatory Test Results:</h2>
+    <ul>
+      <li>Type: {{ stateRegulatoryData.Type }}</li>
+      <li>State: {{ stateRegulatoryData.State }}</li>
+      <li>Compliance: {{ stateRegulatoryData.Compliance }}</li>
+      <li>Special Rule: {{ stateRegulatoryData.SpecialRule }}</li>
+      <li>Result: {{ stateRegulatoryData.Result }}</li>
+    </ul>
+  </div>
+}
