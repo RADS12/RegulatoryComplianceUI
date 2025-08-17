@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataReaderService } from '../../Services/data-reader.service';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'high-cost',
@@ -11,11 +12,13 @@ import { DataReaderService } from '../../Services/data-reader.service';
 export class HighCost implements OnInit {
   highCostData: any;
 
-  constructor(private dataReaderService: DataReaderService) {}
+  constructor(private dataReaderService: DataReaderService, public authService: AuthService) {}
 
   ngOnInit() {
-    this.dataReaderService.readJsonFile$('HighCostTestResults.json').subscribe(data => {
-      this.highCostData = data.HighCostTestResults;
-    });
+    if (this.authService.isLoggedIn()) {
+      this.dataReaderService.readJsonFile$('HighCostTestResults.json').subscribe(data => {
+        this.highCostData = data.HighCostTestResults;
+      });
+    }
   }
 }

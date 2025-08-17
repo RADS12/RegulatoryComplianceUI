@@ -5,8 +5,10 @@ import { SafeHarbor } from './Components/safeHarbor/safeHarbor';
 import { HighCost } from './Components/highCost/highCost';
 import { PointsFees } from './Components/pointsFees/pointsFees';
 import { StateRegulatoryTests } from './Components/stateRegulatoryTests/stateRegulatoryTests';
+import { LoginComponent } from './Components/login/login';
 
 export const routes: Routes = [
+	{ path: 'login', component: LoginComponent },
 	{
 		path: '',
 		component: Tabs,

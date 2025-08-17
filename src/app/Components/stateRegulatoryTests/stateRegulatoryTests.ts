@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataReaderService } from '../../Services/data-reader.service';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'state-regulatory-tests',
@@ -9,11 +10,13 @@ import { DataReaderService } from '../../Services/data-reader.service';
 export class StateRegulatoryTests implements OnInit {
   stateRegulatoryData: any;
 
-  constructor(private dataReaderService: DataReaderService) {}
+  constructor(private dataReaderService: DataReaderService, public authService: AuthService) {}
 
   ngOnInit() {
-    this.dataReaderService.readJsonFile$('StateRegulatoryTestResults.json').subscribe(data => {
-      this.stateRegulatoryData = data.StateRegulatoryTestResults;
-    });
+    if (this.authService.isLoggedIn()) {
+      this.dataReaderService.readJsonFile$('StateRegulatoryTestResults.json').subscribe(data => {
+        this.stateRegulatoryData = data.StateRegulatoryTestResults;
+      });
+    }
   }
 }

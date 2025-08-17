@@ -1,5 +1,17 @@
 <header class="header" [ngClass]="{ 'header-failed': isAnyTabFailed, 'header-passed': !isAnyTabFailed }">
-  <div class="header-title">Regulatory Compliance Test Results</div>
-  <div class="loan-number">Loan Number: 3244555678</div>
-  <div class="test-status-header">Test Result: Passed</div>
+  <div class="header-content">
+    <div class="header-left">
+      <div>
+        <div class="header-title">Regulatory Compliance Test Results</div>
+        <div class="loan-number">Loan Number: 3244555678</div>
+        <div class="test-status-header">Test Result: Passed</div>
+      </div>
+    </div>
+    @if (authService.isLoggedIn()) {
+      <div class="user-info">
+        <span class="username">User: {{ username }}</span>
+        <button class="logout-btn" (click)="logout()">Logout</button>
+      </div>
+    }
+  </div>
 </header>

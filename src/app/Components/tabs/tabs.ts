@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'tabs',
@@ -18,7 +19,11 @@ export class Tabs {
   ];
   selectedIndex = 0;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public authService: AuthService) {
+    if (!this.authService.isLoggedIn()) {
+      this.router.navigate(['/login']);
+    }
+  }
 
   selectTab(index: number) {
     this.selectedIndex = index;

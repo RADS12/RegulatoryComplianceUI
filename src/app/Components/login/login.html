@@ -1,0 +1,21 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="login()">
+    <label for="username">Username:</label>
+    <input id="username" [(ngModel)]="username" name="username" required>
+    <label for="password">Password:</label>
+    <div class="password-field">
+      <input id="password" [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" name="password" required class="password-input">
+  <span class="eye-icon" (click)="showPassword = !showPassword">
+        <svg height="20" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 11 Q12 6 20 11" />
+          <circle cx="12" cy="14" r="3" />
+        </svg>
+      </span>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+  @if (error) {
+    <div class="error">{{ error }}</div>
+  }
+ </div>

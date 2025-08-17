@@ -1,59 +1,68 @@
+
 # RegulatoryComplianceUI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
+RegulatoryComplianceUI is an Angular 20 application for managing and displaying regulatory compliance test results for loans. It features:
 
-## Development server
+- Tabbed navigation for Safe Harbor, High Cost, Points & Fees, and State Regulatory Tests
+- Dynamic data loading from JSON files in `src/assets/Data`
+- Authentication module for login/logout and access control
+- Modern Angular 20 syntax and best practices
+- Responsive UI with color-coded test results
 
-To start a local development server, run:
+## Features
+
+- **Authentication**: All components use a shared authentication service. Only authenticated users can view compliance data.
+- **Dynamic Data**: Test results are loaded from JSON files and displayed in each tab.
+- **Status Colors**: Test status is color-coded (e.g., blue for passed, red for failed).
+- **Angular 20 Syntax**: Uses new control flow and class binding features where supported.
+
+## Getting Started
+
+To start the development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open your browser at `http://localhost:4200/`.
 
-## Code scaffolding
+## Authentication
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+The app uses a simple authentication service. To log in, use:
 
-```bash
-ng generate component component-name
-```
+- Username: `admin`
+- Password: `password`
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+You can extend the authentication logic in `src/app/Services/auth.service.ts`.
 
-```bash
-ng generate --help
-```
+## Data Files
+
+Compliance test results are stored in JSON files in `src/assets/Data/`. You can edit these files to update the displayed results.
 
 ## Building
 
-To build the project run:
+To build the project:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Build output is in the `dist/RegulatoryComplianceUI` directory.
 
-## Running unit tests
+## Testing
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+To run unit tests:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## Customization
 
-For end-to-end (e2e) testing, run:
+- Add new tabs or components using Angular CLI
+- Update styles in the relevant CSS files
+- Extend authentication for real-world use
 
-```bash
-ng e2e
-```
+## More Info
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For Angular CLI documentation, see [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli).

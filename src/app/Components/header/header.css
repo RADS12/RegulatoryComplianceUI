@@ -1,9 +1,97 @@
+.logo-bg {
+  background: linear-gradient(90deg, #022e71 0%, #01327b 100%);
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Modern header layout */
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+.header-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  margin-right: 1.5rem;
+  background: linear-gradient(90deg, #024cba 0%, #025be0 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 8px;
+}
+.header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+.loan-number, .test-status-header {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: normal;
+  text-align: center;
+}
+.user-info {
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+/* User info and logout styles */
+.user-info {
+  position: absolute;
+  right: 24px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.username {
+  color: #fff;
+  font-size: 1rem;
+  margin-right: 16px;
+  font-weight: normal;
+}
+.logout-btn {
+  background: none;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.logout-btn:hover {
+  color: #eee;
+  background: none;
+}
 .test-status-header {
   font-size: 1rem;
   color: #fff;
   text-align: center;
   margin: 0.1rem auto 0 auto;
-  font-weight: bold;
+  font-weight: normal;
 }
 /* Added styles for app-header class, moved from inline styles in header.html */
 
@@ -18,7 +106,7 @@
 } */
 
 .header-passed {
-  background: linear-gradient(90deg, #090cce 0%, #0249b3 100%);
+  background: linear-gradient(90deg, #024cba 0%, #025be0 100%);
 }
 
 /* .header-passed {
@@ -57,7 +145,7 @@ header {
   color: #fff;
   padding: 0.25rem 1rem 0.5rem 1rem;
   border-radius: 8px;
-  font-weight: bold;
+  font-weight: normal;
   background: none;
   text-align: center;
   margin: 0.25rem auto 0 auto;
@@ -100,3 +188,4 @@ header {
     margin: 0;
     padding: 0;
   }
+    font-weight: normal;
