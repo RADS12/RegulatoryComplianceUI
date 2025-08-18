@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DecimalPipe } from '@angular/common';
+import { DecimalPipe, NgClass } from '@angular/common';
 import { DataReaderService } from '../../Services/data-reader.service';
 import { AuthService } from '../../Services/auth.service';
 import { PointsFeesStateService } from './pointsFees-state.service';
@@ -8,7 +8,7 @@ import { PointsFeesStateService } from './pointsFees-state.service';
 @Component({
   selector: 'points-fees',
   standalone: true,
-  imports: [FormsModule, DecimalPipe],
+  imports: [FormsModule, DecimalPipe, NgClass],
   templateUrl: './pointsFees.html',
   styleUrls: ['./pointsFees.css']
 })
@@ -29,7 +29,7 @@ export class PointsFees implements OnInit {
   }
   pointsFeesData: any;
 
-  loanAmount: number = 0;
+  loanAmount: number | null = null;
   loanType: string = 'fixed';
   result: string = '';
 

@@ -1,19 +1,26 @@
-<div *ngIf="highCostData; else noData">
-  <div class="test-status" [class.passed]="highCostData.Result === 'Passed'"
-    [class.failed]="highCostData.Result === 'Failed'">
-    Test {{ highCostData.Result }}
-  </div>
-  <div class="mortgage-info">
-    <h2>High Cost Test Results:</h2>
-    <ul>
-      <li>Type: {{ highCostData.Type }}</li>
-      <li>Interest Rate: {{ highCostData.InterestRate }}</li>
-      <li>Term: {{ highCostData.Term }}</li>
-      <li>APR: {{ highCostData.APR }}</li>
-      <li>Result: {{ highCostData.Result }}</li>
-    </ul>
+<div class="highcost-section">
+  <div class="test-status passed">Test Passed</div>
+  <div>
+    <h2 class="hc-title">High Cost Test Results</h2>
+    <div class="hc-row">
+      <div class="hc-label">Type:</div>
+      <div class="hc-value">High Cost Mortgage</div>
+    </div>
+    <div class="hc-row">
+      <div class="hc-label">Interest Rate:</div>
+      <div class="hc-value">Fixed%</div>
+    </div>
+    <div class="hc-row">
+      <div class="hc-label">Term:</div>
+      <div class="hc-value">30 Years</div>
+    </div>
+    <div class="hc-row">
+      <div class="hc-label">APR:</div>
+      <div class="hc-value">6.25%</div>
+    </div>
+    <div class="hc-row">
+      <div class="hc-label">Result:</div>
+      <div class="hc-value hc-result pass">Pass</div>
+    </div>
   </div>
 </div>
-<ng-template #noData>
-  <div>No high cost data available.</div>
-</ng-template>

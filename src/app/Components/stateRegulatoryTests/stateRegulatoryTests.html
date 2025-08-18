@@ -1,13 +1,28 @@
-<div class="test-status passed">Test Passed</div>
-@if (stateRegulatoryData) {
-  <div class="mortgage-info">
-    <h2>State Regulatory Test Results:</h2>
-    <ul>
-      <li>Type: {{ stateRegulatoryData.Type }}</li>
-      <li>State: {{ stateRegulatoryData.State }}</li>
-      <li>Compliance: {{ stateRegulatoryData.Compliance }}</li>
-      <li>Special Rule: {{ stateRegulatoryData.SpecialRule }}</li>
-      <li>Result: {{ stateRegulatoryData.Result }}</li>
-    </ul>
-  </div>
-}
+<div class="statereg-section">
+  <div class="test-status passed">Test Passed</div>
+  @if (stateRegulatoryData) {
+    <div>
+      <h2 class="sr-title">State Regulatory Test Results</h2>
+      <div class="sr-row">
+        <div class="sr-label">Type:</div>
+        <div class="sr-value">{{ stateRegulatoryData.Type }}</div>
+      </div>
+      <div class="sr-row">
+        <div class="sr-label">State:</div>
+        <div class="sr-value">{{ stateRegulatoryData.State }}</div>
+      </div>
+      <div class="sr-row">
+        <div class="sr-label">Compliance:</div>
+        <div class="sr-value">{{ stateRegulatoryData.Compliance }}</div>
+      </div>
+      <div class="sr-row">
+        <div class="sr-label">Special Rule:</div>
+        <div class="sr-value">{{ stateRegulatoryData.SpecialRule }}</div>
+      </div>
+      <div class="sr-row">
+        <div class="sr-label">Result:</div>
+        <div class="sr-value sr-result" [ngClass]="{'pass': stateRegulatoryData.Result === 'Pass', 'fail': stateRegulatoryData.Result !== 'Pass'}">{{ stateRegulatoryData.Result }}</div>
+      </div>
+    </div>
+  }
+</div>

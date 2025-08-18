@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { NgClass, DecimalPipe } from '@angular/common';
 import { DataReaderService } from '../../Services/data-reader.service';
 import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'safe-harbor',
+  standalone: true,
+  // ...existing code...
   templateUrl: './safeHarbor.html',
   styleUrls: ['./safeHarbor.css']
 })

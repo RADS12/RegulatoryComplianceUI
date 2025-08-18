@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { DataReaderService } from '../../Services/data-reader.service';
 import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'state-regulatory-tests',
+  standalone: true,
+  imports: [NgClass],
   templateUrl: './stateRegulatoryTests.html',
   styleUrls: ['./stateRegulatoryTests.css']
 })

@@ -1,49 +1,64 @@
-<div class="form-section">
-  <form title="Loan Amount Form" label="lblForm" (ngSubmit)="calculateFees()" class="points-fees-form">
-    <div class="form-group">
-  <div class="inline-group">
-    <label for="loanAmount">Loan Amount:</label>
-    <input id="loanAmount" title="Enter loan amount" type="number" [(ngModel)]="loanAmount" name="loanAmount" required class="form-control" (blur)="loanAmountTouched = true" [min]="minLoanAmount" [max]="maxLoanAmount">
-  </div>
-  <!-- <div class="loan-limits">(Min: {{ minLoanAmount | number }}, Max: {{ maxLoanAmount | number }})</div> -->
+
+<div class="pointsfees-section">
+  <div class="test-status passed">Test Passed</div>
+  <div class="pointsfees-card">
+    <h2 class="pf-title">Points & Fees Calculator</h2>
+    <form title="Loan Amount Form" label="lblForm" (ngSubmit)="calculateFees()" class="points-fees-form">
+      <div class="pf-row">
+        <div class="pf-label">Loan Amount:</div>
+  <div class="pf-input">
+          <input id="loanAmount" title="Enter loan amount" type="number" [(ngModel)]="loanAmount" name="loanAmount" required class="form-control" (blur)="loanAmountTouched = true" [min]="minLoanAmount" [max]="maxLoanAmount" placeholder="30,000" step="0.01" pattern="^\d+(\.\d{0,2})?$">
+          <span class="loan-limits">(Min: {{ minLoanAmount | number }}, Max: {{ maxLoanAmount | number }})</span>
+        </div>
+      </div>
       @if (loanAmountInvalid) {
-  <div class="error-msg">Loan amount is required and must be between {{ minLoanAmount | number }} and {{ maxLoanAmount | number }}.</div>
+        <div class="error-msg">Loan amount is required and must be between {{ minLoanAmount | number }} and {{ maxLoanAmount | number }}.</div>
       }
-    </div>
-    <div class="form-group">
-      <div class="inline-group">
-        <label for="loanType">Loan Type:</label>
-        <select id="loanType" title="Select loan type" [(ngModel)]="loanType" name="loanType" required class="form-control" (blur)="loanTypeTouched = true">
-          <option value="fixed">Fixed</option>
-          <option value="adjustable">Adjustable</option>
-        </select>
+      <div class="pf-row">
+        <div class="pf-label">Loan Type:</div>
+        <div class="pf-input">
+          <select id="loanType" title="Select loan type" [(ngModel)]="loanType" name="loanType" required class="form-control" (blur)="loanTypeTouched = true">
+            <option value="fixed">Fixed</option>
+            <option value="adjustable">Adjustable</option>
+          </select>
+        </div>
       </div>
       @if (loanTypeInvalid) {
         <div class="error-msg">Loan type is required.</div>
       }
-    </div>
-
-    <div class="form-group">
-      <button type="submit" class="theme-btn">Calculate Points & Fees</button>
-    </div>
-    @if (result) {
-      <div class="calc-result">
-        <p><span class="calc-label">Calculated Fees:</span> <span class="calc-value">{{ result }}</span></p>
+      <div class="pf-row pf-btn-row">
+        <button type="submit" class="theme-btn">Calculate Points & Fees</button>
       </div>
-    }
-  </form>
-</div>
-
-<div class="test-status passed">Test Passed</div>
-@if (pointsFeesData) {
-  <div class="mortgage-info">
-    <h2>Points & Fees Test Results:</h2>
-    <ul>
-      <li>Type: {{ pointsFeesData.Type }}</li>
-      <li>Points: {{ pointsFeesData.Points }}</li>
-      <li>Fees: {{ pointsFeesData.Fees }}</li>
-      <li>Threshold: {{ pointsFeesData.Threshold }}</li>
-      <li>Result: {{ pointsFeesData.Result }}</li>
-    </ul>
+      @if (result) {
+        <div class="calc-result">
+          <span class="calc-label">Calculated Fees:</span> <span class="calc-value">{{ result }}</span>
+        </div>
+      }
+    </form>
   </div>
-}
+  @if (pointsFeesData) {
+    <div class="pointsfees-card pf-results">
+      <h2 class="pf-title">Points & Fees Test Results</h2>
+      <div class="pf-row">
+        <div class="pf-label">Type:</div>
+        <div class="pf-value">{{ pointsFeesData.Type }}</div>
+      </div>
+      <div class="pf-row">
+        <div class="pf-label">Points:</div>
+        <div class="pf-value">{{ pointsFeesData.Points }}</div>
+      </div>
+      <div class="pf-row">
+        <div class="pf-label">Fees:</div>
+        <div class="pf-value">{{ pointsFeesData.Fees }}</div>
+      </div>
+      <div class="pf-row">
+        <div class="pf-label">Threshold:</div>
+        <div class="pf-value">{{ pointsFeesData.Threshold }}</div>
+      </div>
+      <div class="pf-row">
+        <div class="pf-label">Result:</div>
+        <div class="pf-value pf-result" [ngClass]="{'pass': pointsFeesData.Result === 'Pass', 'fail': pointsFeesData.Result !== 'Pass'}">{{ pointsFeesData.Result }}</div>
+      </div>
+    </div>
+  }
+</div>

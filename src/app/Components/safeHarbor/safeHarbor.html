@@ -1,14 +1,33 @@
-<div class="test-status passed">Test Passed</div>
-@if (safeHarborData) {
-  <div class="mortgage-info">
-    <h2>Safe Harbor Test Results:</h2>
-    <ul>
-      <li>Type: {{ safeHarborData.Type }}</li>
-      <li>Interest Rate: {{ safeHarborData.InterestRate }}</li>
-      <li>Term: {{ safeHarborData.Term }}</li>
-      <li>Points & Fees: {{ safeHarborData.PointsAndFees }}</li>
-      <li>Test Result ATR: {{ safeHarborData.TestATR }}</li>
-      <li>Test Result QM: {{ safeHarborData.TestQM }}</li>
-    </ul>
-  </div>
-}
+
+<div class="safeharbor-section">
+  <div class="test-status passed">Test Passed</div>
+  @if (safeHarborData) {
+  <div>
+  <h2 class="sh-title">Safe Harbor Test Results</h2>
+      <div class="sh-row">
+        <div class="sh-label">Type:</div>
+        <div class="sh-value">Qualified Mortgage</div>
+      </div>
+      <div class="sh-row">
+        <div class="sh-label">Interest Rate:</div>
+        <div class="sh-value">Fixed%</div>
+      </div>
+      <div class="sh-row">
+        <div class="sh-label">Term:</div>
+        <div class="sh-value">30 Years</div>
+      </div>
+      <div class="sh-row">
+        <div class="sh-label">Points & Fees:</div>
+        <div class="sh-value">$2,500.00</div>
+      </div>
+      <div class="sh-row">
+        <div class="sh-label">Test Result ATR:</div>
+        <div class="sh-value sh-result pass">Pass</div>
+      </div>
+      <div class="sh-row">
+        <div class="sh-label">Test Result QM:</div>
+        <div class="sh-value sh-result pass">Pass</div>
+      </div>
+    </div>
+  }
+</div>
