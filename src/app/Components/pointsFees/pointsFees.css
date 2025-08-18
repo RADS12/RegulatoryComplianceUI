@@ -1,3 +1,99 @@
+.calc-result {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.calc-label {
+  font-weight: bold;
+  color: #2e7d32;
+}
+.calc-value {
+  font-weight: bold;
+  color: #2e7d32;
+}
+.inline-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.inline-group label {
+  font-weight: bold;
+  color: #024cba;
+  margin-bottom: 0;
+  min-width: 120px;
+}
+.inline-group .form-control {
+  margin-bottom: 0;
+}
+.loan-limits {
+  font-size: 0.82rem;
+  color: #1976d2;
+  margin-bottom: 0.25rem;
+  font-weight: 400;
+  text-align: right;
+  width: 100%;
+  margin-top: 0.25rem;
+  margin-right: 2px;
+}
+.error-msg {
+  color: #d32f2f;
+  font-size: 0.82rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding-left: 2px;
+}
+.form-section {
+  max-width: 340px;
+  margin: 1.2rem auto 1.2rem auto;
+  background: #f8fbff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(2, 91, 224, 0.08);
+  padding: 1.1rem 1rem 1rem 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #024cba;
+}
+.form-control {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #bcdffb;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  box-sizing: border-box;
+}
+.theme-btn {
+  background: linear-gradient(90deg, #024cba 0%, #025be0 100%);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(2, 91, 224, 0.12);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.theme-btn:hover {
+  background: linear-gradient(90deg, #025be0 0%, #024cba 100%);
+  box-shadow: 0 4px 16px rgba(2, 91, 224, 0.18);
+}
+.points-fees-form {
+  margin-bottom: 0;
+}
 .test-status.passed {
   background: #81c784;
   color: #fff;

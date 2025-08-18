@@ -1,3 +1,39 @@
+<div class="form-section">
+  <form title="Loan Amount Form" label="lblForm" (ngSubmit)="calculateFees()" class="points-fees-form">
+    <div class="form-group">
+  <div class="inline-group">
+    <label for="loanAmount">Loan Amount:</label>
+    <input id="loanAmount" title="Enter loan amount" type="number" [(ngModel)]="loanAmount" name="loanAmount" required class="form-control" (blur)="loanAmountTouched = true" [min]="minLoanAmount" [max]="maxLoanAmount">
+  </div>
+  <!-- <div class="loan-limits">(Min: {{ minLoanAmount | number }}, Max: {{ maxLoanAmount | number }})</div> -->
+      @if (loanAmountInvalid) {
+  <div class="error-msg">Loan amount is required and must be between {{ minLoanAmount | number }} and {{ maxLoanAmount | number }}.</div>
+      }
+    </div>
+    <div class="form-group">
+      <div class="inline-group">
+        <label for="loanType">Loan Type:</label>
+        <select id="loanType" title="Select loan type" [(ngModel)]="loanType" name="loanType" required class="form-control" (blur)="loanTypeTouched = true">
+          <option value="fixed">Fixed</option>
+          <option value="adjustable">Adjustable</option>
+        </select>
+      </div>
+      @if (loanTypeInvalid) {
+        <div class="error-msg">Loan type is required.</div>
+      }
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="theme-btn">Calculate Points & Fees</button>
+    </div>
+    @if (result) {
+      <div class="calc-result">
+        <p><span class="calc-label">Calculated Fees:</span> <span class="calc-value">{{ result }}</span></p>
+      </div>
+    }
+  </form>
+</div>
+
 <div class="test-status passed">Test Passed</div>
 @if (pointsFeesData) {
   <div class="mortgage-info">
