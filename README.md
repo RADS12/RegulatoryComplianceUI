@@ -39,10 +39,21 @@ You can extend the authentication logic in `src/app/Services/auth.service.ts`.
 
 Compliance test results are stored in JSON files in `src/assets/Data/`. You can edit these files to update the displayed results. This mimics data from a DQL server database.
 
-## Customization
 
-- Add new tabs or components using Angular CLI
-- Update styles in the relevant CSS files
-- Extend authentication and role logic for real-world use
-- Customize error handling and HTTP interceptor for notifications or logging
+## Documentation & Best Practices
+
+---
+
+### 📚 Reference Guides
+
+- [Angular Best Practices](./Documents/AngularBestPractices.md)
+- [Application Enhancements](./Documents/AppEnhancements.md)
+- [Application Navigation & Flow](./Documents/AppNavigation.md)
+
+Explore these guides for:
+- Coding standards and Angular tips
+- Ideas for future enhancements
+- Full application flow and navigation details
+
+---
 
