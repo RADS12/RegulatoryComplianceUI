@@ -18,7 +18,7 @@ export const routes: Routes = [
 			{ path: 'high-cost', component: HighCost, canActivate: [AuthGuard] },
 			{ path: 'points-fees', component: PointsFees, canActivate: [AuthGuard] },
 			{ path: 'state-regulatory-tests', component: StateRegulatoryTests, canActivate: [AuthGuard] },
-			{ path: '', redirectTo: 'safe-harbor', pathMatch: 'full' }
+			{ path: '', redirectTo: 'points-fees', pathMatch: 'full' }
 		]
 	}
 ];

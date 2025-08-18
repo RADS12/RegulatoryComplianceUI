@@ -11,12 +11,16 @@ import { AuthService } from '../../Services/auth.service';
   styleUrls: ['./tabs.css']
 })
 export class Tabs {
-  tabs = [
-    { label: 'Safe Harbor', route: 'safe-harbor', status: 'passed' },
-    { label: 'High Cost', route: 'high-cost', status: 'passed' },
-    { label: 'Points and Fees', route: 'points-fees', status: 'passed' },
-    { label: 'State Regulatory Tests', route: 'state-regulatory-tests', status: 'passed' }
-  ];
+  get tabs() {
+    const allTabs = [
+      { label: 'Points and Fees', route: 'points-fees', status: 'passed', roles: ['admin', 'user'] },
+      { label: 'Safe Harbor', route: 'safe-harbor', status: 'passed', roles: ['admin', 'user'] },
+      { label: 'High Cost', route: 'high-cost', status: 'passed', roles: ['admin', 'user'] },
+      { label: 'State Regulatory Tests', route: 'state-regulatory-tests', status: 'passed', roles: ['admin'] }
+    ];
+    // Only show tabs for which the user has the required role
+  return allTabs.filter(tab => tab.roles.some(role => this.authService.hasRole(role)));
+  }
   selectedIndex = 0;
 
   constructor(private router: Router, public authService: AuthService) {

@@ -11,58 +11,38 @@ RegulatoryComplianceUI is an Angular 20 application for managing and displaying 
 
 ## Features
 
-- **Authentication**: All components use a shared authentication service. Only authenticated users can view compliance data.
+- **Authentication & Route Protection**: Uses an AuthGuard (`auth.guard.ts`) to protect routes. Only authenticated users can access main tabs.
+- **Role-Based UI**: Tabs and actions are shown/hidden based on user role. Two roles are supported:
+	- `admin`: Sees all tabs (Safe Harbor, High Cost, Points & Fees, State Regulatory Tests)
+	- `user`: Sees all except State Regulatory Tests
+	- Both use password `password` for login
+- **Centralized Error Handling**: All uncaught errors are handled by a global error handler (`global-error-handler.ts`).
+- **HTTP Error Interceptor**: All HTTP errors are caught and logged by a centralized interceptor (`http-error.interceptor.ts`).
 - **Dynamic Data**: Test results are loaded from JSON files and displayed in each tab.
 - **Status Colors**: Test status is color-coded (e.g., blue for passed, red for failed).
 - **Angular 20 Syntax**: Uses new control flow and class binding features where supported.
 
-## Getting Started
-
-To start the development server:
-
-```bash
-ng serve
-```
-
-Open your browser at `http://localhost:4200/`.
-
-## Authentication
+## Authentication & Roles
 
 The app uses a simple authentication service. To log in, use:
 
-- Username: `admin`
+- Username: `admin` or `user`
 - Password: `password`
+
+Role-based UI:
+- `admin`: Sees all tabs
+- `user`: Sees all except State Regulatory Tests
 
 You can extend the authentication logic in `src/app/Services/auth.service.ts`.
 
 ## Data Files
 
-Compliance test results are stored in JSON files in `src/assets/Data/`. You can edit these files to update the displayed results.
-
-## Building
-
-To build the project:
-
-```bash
-ng build
-```
-
-Build output is in the `dist/RegulatoryComplianceUI` directory.
-
-## Testing
-
-To run unit tests:
-
-```bash
-ng test
-```
+Compliance test results are stored in JSON files in `src/assets/Data/`. You can edit these files to update the displayed results. This mimics data from a DQL server database.
 
 ## Customization
 
 - Add new tabs or components using Angular CLI
 - Update styles in the relevant CSS files
-- Extend authentication for real-world use
+- Extend authentication and role logic for real-world use
+- Customize error handling and HTTP interceptor for notifications or logging
 
-## More Info
-
-For Angular CLI documentation, see [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli).

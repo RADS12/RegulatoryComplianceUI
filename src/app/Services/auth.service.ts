@@ -9,14 +9,9 @@ export class AuthService {
 
   login(username: string, password: string): boolean {
     // Replace with real authentication logic
-    if (username === 'admin' && password === 'password') {
+    if ((username === 'admin' || username === 'user') && password === 'password') {
       this.isAuthenticated = true;
-      this.userRole = 'admin';
-      return true;
-    }
-    if (username === 'user' && password === 'password') {
-      this.isAuthenticated = true;
-      this.userRole = 'user';
+      this.userRole = username;
       return true;
     }
     this.isAuthenticated = false;
@@ -33,7 +28,11 @@ export class AuthService {
     return this.isAuthenticated;
   }
 
-  hasRole(role: string): boolean {
+  hasRole(role: string | string[]): boolean {
+    if (!this.userRole) return false;
+    if (Array.isArray(role)) {
+      return role.includes(this.userRole);
+    }
     return this.userRole === role;
   }
 }

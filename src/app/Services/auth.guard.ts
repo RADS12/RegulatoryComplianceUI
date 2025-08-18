@@ -11,11 +11,7 @@ export class AuthGuard implements CanActivate {
       this.router.navigate(['/login']);
       return false;
     }
-    // Example role check (replace with your logic)
-    if (!this.auth.hasRole || !this.auth.hasRole('admin')) {
-      this.router.navigate(['/unauthorized']);
-      return false;
-    }
-    return true;
+  // Only block if not logged in; tab visibility is handled in Tabs component
+  return true;
   }
 }

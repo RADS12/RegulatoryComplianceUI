@@ -15,8 +15,7 @@ export class Header {
   constructor(public authService: AuthService, private router: Router) {}
 
   get username(): string {
-    // For demo, return static username. Replace with real user info if available.
-    return this.authService.isLoggedIn() ? 'admin' : '';
+    return this.authService.isLoggedIn() ? (this.authService['userRole'] ?? '') : '';
   }
 
   logout() {
