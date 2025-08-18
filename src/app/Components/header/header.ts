@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { AuthService } from '../../Services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { AuthService } from '../../Services/auth.service';
 })
 export class Header {
   @Input() isAnyTabFailed: boolean = false;
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthService, private router: Router) {}
 
   get username(): string {
     // For demo, return static username. Replace with real user info if available.
@@ -20,6 +21,6 @@ export class Header {
 
   logout() {
     this.authService.logout();
-    window.location.href = '/login';
+    this.router.navigate(['/login']);
   }
 }

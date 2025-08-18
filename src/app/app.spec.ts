@@ -14,10 +14,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', () => {
+  // The app template does not render a <h1> with the title, so this test is not valid.
+  // If you want to test the title property, use:
+  it('should have the correct title property', () => {
     const fixture = TestBed.createComponent(App);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, RegulatoryComplianceUI');
+    const app = fixture.componentInstance;
+  expect(app['title']()).toBe('RegulatoryComplianceUI');
   });
 });
